@@ -64,11 +64,11 @@ def horoscope():
         else:
             print("There has been an error, please try again !")
     else:
-        print("Error, that's not a valid entry, please check you spelling.")
+        print("Error, that's not a valid entry, please check your spelling.")
 
 
 """
-Dictionary of the Zodiac Sign charectaristics
+Dictionary of the Zodiac Sign characteristics
 """
 
 
@@ -228,7 +228,7 @@ print("---------------------------------------------------------------------")
 time.sleep(1)
 print("You were born in:", str(day) + " " + str(month.capitalize()) + " " + str(year))
 time.sleep(1)
-print("Todays date is : ")
+print("Today's date is : ")
 time.sleep(1)
 print(the_date)
 time.sleep(1)
@@ -260,6 +260,6 @@ chinese_horo_description()
 time.sleep(1)
 print("---------------------------------------------------------------------")
 time.sleep(1)
-print("- Thank you for tyring out My Project 3 : Python application  -------")
+print("- Thank you for trying out My Project 3 : Python application  -------")
 time.sleep(1)
 print("------------------- Communication Closed-----------------------------")
