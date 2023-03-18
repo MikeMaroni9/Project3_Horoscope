@@ -5,6 +5,7 @@ year = int(input("Please Enter the year you were born (e.g.: 1984): "))
 month = input("Input month of birth (e.g. january, may etc): ")
 day = int(input("Please enter the day you were born in (e.g. 17:)"))
 horo_sign = None
+chn_horo = None
 days = (2023 - year) * 365
 the_date = datetime.now().date()
 name_list = [i for i in name]
@@ -13,29 +14,29 @@ name_list = [i for i in name]
 def horoscope():
 	global horo_sign
 	if month == 'december':
-		horo_sign = 'Sagittarius' if (day < 22) else 'capricorn'
+		horo_sign = 'Sagittarius' if (day < 22) else 'Capricorn'
 	elif month == 'january':
-		horo_sign = 'Capricorn' if (day < 20) else 'aquarius'
+		horo_sign = 'Capricorn' if (day < 20) else 'Aquarius'
 	elif month == 'february':
-		horo_sign = 'Aquarius' if (day < 19) else 'pisces'
+		horo_sign = 'Aquarius' if (day < 19) else 'Pisces'
 	elif month == 'march':
-		horo_sign = 'Pisces' if (day < 21) else 'aries'
+		horo_sign = 'Pisces' if (day < 21) else 'Aries'
 	elif month == 'april':
-		horo_sign = 'Aries' if (day < 20) else 'taurus'
+		horo_sign = 'Aries' if (day < 20) else 'Taurus'
 	elif month == 'may':
-		horo_sign = 'Taurus' if (day < 21) else 'gemini'
+		horo_sign = 'Taurus' if (day < 21) else 'Gemini'
 	elif month == 'june':
-		horo_sign = 'Gemini' if (day < 21) else 'cancer'
+		horo_sign = 'Gemini' if (day < 21) else 'Cancer'
 	elif month == 'july':
-		horo_sign = 'Cancer' if (day < 23) else 'leo'
+		horo_sign = 'Cancer' if (day < 23) else 'Leo'
 	elif month == 'august':
-		horo_sign = 'Leo' if (day < 23) else 'virgo'
+		horo_sign = 'Leo' if (day < 23) else 'Virgo'
 	elif month == 'september':
 		horo_sign = 'Virgo' if (day < 23) else 'libra'
 	elif month == 'october':
 		horo_sign = 'Libra' if (day < 23) else 'scorpio'
 	elif month == 'november':
-		horo_sign = 'scorpio' if (day < 22) else 'sagittarius'
+		horo_sign = 'Scorpio' if (day < 22) else 'Sagittarius'
 
 sign_description = {
     "Aries": "The first sign of the zodiac, Aries loves to be number one. Naturally, this dynamic fire sign is no stranger to competition. Bold and ambitious, Aries dives headfirst into even the most challenging situations—and they'll make sure they always come out on top!",
@@ -80,6 +81,36 @@ def horo_description():
 	else:
 		print("ERR: Something went wrong... please try again")
 
+def chinese_horo():
+	global chn_horo
+	global year
+	if year in (1948, 1960, 1972, 1984, 1996, 2008, 2020):
+		chn_horo = "Rat"
+	elif year in (1949, 1961, 1973, 1985, 1997, 2009, 2021):
+		chn_horo = "Ox"
+	elif year in (1950, 1962, 1974, 1986, 1998, 2010, 2022):
+		chn_horo = "Tiger"
+	elif year in (1951, 1963, 1975, 1987, 1999, 2011, 2023):
+		chn_horo = "Rabbit"
+	elif year in (1952, 1964, 1976, 1988, 2000, 2012, 2024):
+		chn_horo = "Dragon"
+	elif year in (1953, 1965, 1977, 1989, 2001, 2013, 2025):
+		chn_horo = "Snake"
+	elif year in (1954, 1966, 1978, 1990, 2002, 2014, 2026):
+		chn_horo = "Horse"
+	elif year in (1955, 1967, 1979, 1991, 2003, 2015,2027):
+		chn_horo = "Goat"
+	elif year in (1956, 1968, 1980, 1992, 2004, 2016, 2028):
+		chn_horo = "Monkey"
+	elif year in (1957, 1969, 1981, 1993, 2005, 2017, 2029):
+		chn_horo = "Rooster"
+	elif year in (1958, 1970, 1982, 1994, 2006, 2018, 2030):
+		chn_horo = "Dog"
+	elif year in (1959, 1971, 1983, 1995, 2007, 2019, 2031):
+		chn_horo = "Pig"
+	else:
+		print("This system works from year 1948 onwards, please try again.")
+
 horoscope()
 
 print("Your Name is:", name.capitalize())
@@ -90,3 +121,5 @@ print(the_date)
 print("That means you have been alive for about " + str(days) + " days")
 print("Your astrological sing is:", horo_sign)
 horo_description()
+chinese_horo()
+print("Your Chinese astrological sing is:", chn_horo)
