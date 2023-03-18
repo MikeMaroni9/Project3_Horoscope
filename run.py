@@ -1,6 +1,9 @@
 from datetime import datetime
 import time
 
+"""
+ASCII Graphics to make the intro of the program more appealing
+"""
 print("---------------------------------------------------------------------")
 print("********* Welcome to your personalised Horoscope Checker ************")
 print("---------------------------------------------------------------------")
@@ -12,6 +15,9 @@ print("                     / / (_) | (_| | | (_| | (__ ")
 print("                    /___\___/ \__,_|_|\__,_|\___|_")
 print("---------------------------------------------------------------------")
 
+"""
+General Input Scheme and Variables
+"""
 name = input("Please enter Your name : \n")
 month = input("Input month of birth (e.g. january, may etc): \n").lower()
 year = int(input("Please Enter the year you were born (e.g.: 1984): \n"))
@@ -21,6 +27,11 @@ chn_horo = None
 days = (2023 - year) * 365
 the_date = datetime.now().date()
 name_list = [i for i in name]
+
+
+"""
+Function to Check for Zodiac Sign to assign to the user
+"""
 
 
 def horoscope():
@@ -56,6 +67,11 @@ def horoscope():
         print("Error, that's not a valid entry, please check you spelling.")
 
 
+"""
+Dictionary of the Zodiac Sign charectaristics
+"""
+
+
 sign_description = {
     "Aries": "The first sign of the zodiac, Aries loves to be number one. Naturally, this dynamic fire sign is no stranger to competition. Bold and ambitious, Aries dives headfirst into even the most challenging situations—and they'll make sure they always come out on top!",
     "Taurus": "What sign is more likely to take a six-hour bath, followed by a luxurious Swedish massage and decadent dessert spread? Why Taurus, of course! Taurus is an earth sign represented by the bull. Like their celestial spirit animal, Taureans enjoy relaxing in serene, bucolic environments surrounded by soft sounds, soothing aromas, and succulent flavors. ",
@@ -70,6 +86,11 @@ sign_description = {
     "Aquarius": "Despite the 'aqua' in its name, Aquarius is actually the last air sign of the zodiac. Innovative, progressive, and shamelessly revolutionary, Aquarius is represented by the water bearer, the mystical healer who bestows water, or life, upon the land. Accordingly, Aquarius is the most humanitarian astrological sign. At the end of the day, Aquarius is dedicated to making the world a better place.",
     "Pisces": "If you looked up the word 'psychic' in the dictionary, there would definitely be a picture of Pisces next to it. Pisces is the most intuitive, sensitive, and empathetic sign of the entire zodiac — and that’s because it’s the last of the last. As the final sign, Pisces has absorbed every lesson — the joys and the pain, the hopes and the fears — learned by all of the other signs. It's symbolized by two fish swimming in opposite directions, representing the constant division of Pisces' attention between fantasy and reality.",
 }
+
+
+"""
+Function to print out matching descriptions for each Zodiac Sign
+"""
 
 
 def horo_description():
@@ -99,6 +120,11 @@ def horo_description():
         print(sign_description["Pisces"])
     else:
         print("ERR: Something went wrong... please try again")
+
+
+"""
+Chinese Horoscope Sign Function
+"""
 
 
 def chinese_horo():
@@ -131,6 +157,11 @@ def chinese_horo():
         print("This system works from year 1948 onwards, please try again.")
 
 
+"""
+Chinese Personality trait dictionary corresponding to each of the signs.
+"""
+
+
 chn_sign_description = {
     "Rat": "Personality traits: Ambitious, charming, talkative, resourceful, private, frugal, critical",
     "Ox": "Personality traits: Diligent, gentle, hardworking, reliable, patient, materialistic, stubborn",
@@ -145,6 +176,11 @@ chn_sign_description = {
     "Dog": "Personality traits: Helpful, honest, trustworthy, unselfish, pessimistic, anxious, timid",
     "Pig": "Personality traits: Caring, generous, smart, outgoing, fearful, impatient, materialistic",
 }
+
+
+"""
+Function to assign correct Chinese description to correct sign.
+"""
 
 
 def chinese_horo_description():
