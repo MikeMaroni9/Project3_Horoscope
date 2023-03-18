@@ -8,7 +8,7 @@
     <ul>https://zodiac-horoscope.herokuapp.com/ </ul>
 
 <h2> Materials Used / References</h2>
-    <ul>ASCII Zodiac Code borrowed from: <A HREF = "https://ascii.co.uk/art/zodiac"></A></ul>
+    <ul>ASCII Zodiac Code borrowed from: https://ascii.co.uk/art/zodiac"</ul>
     <ul>Delay timer borrowed from: <A HREF = "https://realpython.com/python-sleep/"></A></ul>
     <ul>Horoscope Information from : <A HREF = "https://www.allure.com/story/zodiac-sign-personality-traits-dates"></A></ul>
     <ul>Chinese Horoscope from : <A HREF = "https://www.oprahdaily.com/life/a35119928/chinese-zodiac-signs/"></A></ul>
