@@ -15,6 +15,7 @@
 <h2>Testing and Error Checking<h2>
     <ul>I have been testing out the program extensively.</ul>
     <ul>I have added all possible months in the list that will print out the error if invalid month is included.</ul>
+    <ul>Months can be input either way, lower case or all caps, they will be transformed to usable format.</ul>
     <ul>Also the Chinese Horoscope system is working from year 1948, if year before that has been added, the messege will be displayed about the error.</ul>
     <ul>The one thing that due the time constraint I didn't manage to include is error checking for strings being inputed as numbers.</ul>
 
