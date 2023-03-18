@@ -1,3 +1,4 @@
+name = input("Please enter Your name : ")
 year = int(input("Please Enter the year you were born (e.g.: 1984): "))
 month = input("Input month of birth (e.g. january, may etc): ")
 day = int(input("Please enter the day you were born in (e.g. 17:)"))
@@ -32,3 +33,6 @@ def horoscope():
 
 horoscope()
 
+print("Your Name is:", name.capitalize())
+print("You were born in:", str(day) + " " + str(month.capitalize()) + " " + str(year))
+print("Your astrological sing is:", horo_sign)
