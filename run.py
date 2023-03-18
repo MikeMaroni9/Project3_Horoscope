@@ -2,7 +2,7 @@ from datetime import datetime
 
 name = input("Please enter Your name : ")
 year = int(input("Please Enter the year you were born (e.g.: 1984): "))
-month = input("Input month of birth (e.g. january, may etc): ")
+month = input("Input month of birth (e.g. january, may etc): ").lower()
 day = int(input("Please enter the day you were born in (e.g. 17:)"))
 horo_sign = None
 chn_horo = None
@@ -37,6 +37,8 @@ def horoscope():
 		horo_sign = 'Libra' if (day < 23) else 'scorpio'
 	elif month == 'november':
 		horo_sign = 'Scorpio' if (day < 22) else 'Sagittarius'
+	else:
+		print("There has been an error, please try again !")
 
 sign_description = {
     "Aries": "The first sign of the zodiac, Aries loves to be number one. Naturally, this dynamic fire sign is no stranger to competition. Bold and ambitious, Aries dives headfirst into even the most challenging situations—and they'll make sure they always come out on top!",
