@@ -1,21 +1,21 @@
 from datetime import datetime
 import time
 
-print("---------------------------------------------------------------------------")
-print("************ Welcome to your personalised Horoscope Checker ***************")
-print("---------------------------------------------------------------------------")
+print("---------------------------------------------------------------------")
+print("********* Welcome to your personalised Horoscope Checker ************")
+print("---------------------------------------------------------------------")
 print("                                  _ _")
 print("                                 | (_)")
 print("                     _______   __| |_  __ _  ___")
 print("                    |_  / _ \ / _` | |/ _` |/ __|")
 print("                     / / (_) | (_| | | (_| | (__ ")
 print("                    /___\___/ \__,_|_|\__,_|\___|_")
-print("---------------------------------------------------------------------------")
+print("---------------------------------------------------------------------")
 
-name = input("Please enter Your name : \n") 
-month = input("Input month of birth (e.g. january, may etc): \n").lower() 
-year = int(input("Please Enter the year you were born (e.g.: 1984): \n")) 
-day = int(input("Please enter the day you were born in (e.g. 17:)\n")) 
+name = input("Please enter Your name : \n")
+month = input("Input month of birth (e.g. january, may etc): \n").lower()
+year = int(input("Please Enter the year you were born (e.g.: 1984): \n"))
+day = int(input("Please enter the day you were born in (e.g. 17:)\n"))
 horo_sign = None
 chn_horo = None
 days = (2023 - year) * 365
@@ -24,37 +24,37 @@ name_list = [i for i in name]
 
 
 def horoscope():
-	global horo_sign
-	global month
-	if month in ('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'):
-		if month == 'december':
-			horo_sign = 'Sagittarius' if (day < 22) else 'Capricorn'
-		elif month == 'january':
-			horo_sign = 'Capricorn' if (day < 20) else 'Aquarius'
-		elif month == 'february':
-			horo_sign = 'Aquarius' if (day < 19) else 'Pisces'
-		elif month == 'march':
-			horo_sign = 'Pisces' if (day < 21) else 'Aries'
-		elif month == 'april':
-			horo_sign = 'Aries' if (day < 20) else 'Taurus'
-		elif month == 'may':
-			horo_sign = 'Taurus' if (day < 21) else 'Gemini'
-		elif month == 'june':
-			horo_sign = 'Gemini' if (day < 21) else 'Cancer'
-		elif month == 'july':
-			horo_sign = 'Cancer' if (day < 23) else 'Leo'
-		elif month == 'august':
-			horo_sign = 'Leo' if (day < 23) else 'Virgo'
-		elif month == 'september':
-			horo_sign = 'Virgo' if (day < 23) else 'Libra'
-		elif month == 'october':
-			horo_sign = 'Libra' if (day < 23) else 'Scorpio'
-		elif month == 'november':
-			horo_sign = 'Scorpio' if (day < 22) else 'Sagittarius'
-		else:
-			print("There has been an error, please try again !")
-	else:
-		print("Error, that's not a valid entry, please check you spelling and try again.")
+    global horo_sign
+    if month in ('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'):
+        if month == 'december':
+            horo_sign = 'Sagittarius' if (day < 22) else 'Capricorn'
+        elif month == 'january':
+            horo_sign = 'Capricorn' if (day < 20) else 'Aquarius'
+        elif month == 'february':
+            horo_sign = 'Aquarius' if (day < 19) else 'Pisces'
+        elif month == 'march':
+            horo_sign = 'Pisces' if (day < 21) else 'Aries'
+        elif month == 'april':
+            horo_sign = 'Aries' if (day < 20) else 'Taurus'
+        elif month == 'may':
+            horo_sign = 'Taurus' if (day < 21) else 'Gemini'
+        elif month == 'june':
+            horo_sign = 'Gemini' if (day < 21) else 'Cancer'
+        elif month == 'july':
+            horo_sign = 'Cancer' if (day < 23) else 'Leo'
+        elif month == 'august':
+            horo_sign = 'Leo' if (day < 23) else 'Virgo'
+        elif month == 'september':
+            horo_sign = 'Virgo' if (day < 23) else 'Libra'
+        elif month == 'october':
+            horo_sign = 'Libra' if (day < 23) else 'Scorpio'
+        elif month == 'november':
+            horo_sign = 'Scorpio' if (day < 22) else 'Sagittarius'
+        else:
+            print("There has been an error, please try again !")
+    else:
+        print("Error, that's not a valid entry, please check you spelling.")
+
 
 sign_description = {
     "Aries": "The first sign of the zodiac, Aries loves to be number one. Naturally, this dynamic fire sign is no stranger to competition. Bold and ambitious, Aries dives headfirst into even the most challenging situations—and they'll make sure they always come out on top!",
@@ -71,63 +71,65 @@ sign_description = {
     "Pisces": "If you looked up the word 'psychic' in the dictionary, there would definitely be a picture of Pisces next to it. Pisces is the most intuitive, sensitive, and empathetic sign of the entire zodiac — and that’s because it’s the last of the last. As the final sign, Pisces has absorbed every lesson — the joys and the pain, the hopes and the fears — learned by all of the other signs. It's symbolized by two fish swimming in opposite directions, representing the constant division of Pisces' attention between fantasy and reality.",
 }
 
+
 def horo_description():
-	if horo_sign == "Aries":
-		print(sign_description["Aries"])
-	elif horo_sign == "Taurus":
-		print(sign_description["Taurus"])
-	elif horo_sign == "Gemini":
-		print(sign_description["Gemini"])
-	elif horo_sign == "Cancer":
-		print(sign_description["Cancer"])
-	elif horo_sign == "Leo":
-		print(sign_description["Leo"])
-	elif horo_sign == "Virgo":
-		print(sign_description["Virgo"])
-	elif horo_sign == "Libra":
-		print(sign_description["Libra"])
-	elif horo_sign == "Scorpio":
-		print(sign_description["Scorpio"])
-	elif horo_sign == "Sagittarius":
-		print(sign_description["Sagittarius"])
-	elif horo_sign == "Capricorn":
-		print(sign_description["Capricorn"])
-	elif horo_sign == "Aquarius":
-		print(sign_description["Aquarius"])
-	elif horo_sign == "Pisces":
-		print(sign_description["Pisces"])
-	else:
-		print("ERR: Something went wrong... please try again")
+    if horo_sign == "Aries":
+        print(sign_description["Aries"])
+    elif horo_sign == "Taurus":
+        print(sign_description["Taurus"])
+    elif horo_sign == "Gemini":
+        print(sign_description["Gemini"])
+    elif horo_sign == "Cancer":
+        print(sign_description["Cancer"])
+    elif horo_sign == "Leo":
+        print(sign_description["Leo"])
+    elif horo_sign == "Virgo":
+        print(sign_description["Virgo"])
+    elif horo_sign == "Libra":
+        print(sign_description["Libra"])
+    elif horo_sign == "Scorpio":
+        print(sign_description["Scorpio"])
+    elif horo_sign == "Sagittarius":
+        print(sign_description["Sagittarius"])
+    elif horo_sign == "Capricorn":
+        print(sign_description["Capricorn"])
+    elif horo_sign == "Aquarius":
+        print(sign_description["Aquarius"])
+    elif horo_sign == "Pisces":
+        print(sign_description["Pisces"])
+    else:
+        print("ERR: Something went wrong... please try again")
+
 
 def chinese_horo():
-	global chn_horo
-	global year
-	if year in (1948, 1960, 1972, 1984, 1996, 2008, 2020):
-		chn_horo = "Rat"
-	elif year in (1949, 1961, 1973, 1985, 1997, 2009, 2021):
-		chn_horo = "Ox"
-	elif year in (1950, 1962, 1974, 1986, 1998, 2010, 2022):
-		chn_horo = "Tiger"
-	elif year in (1951, 1963, 1975, 1987, 1999, 2011, 2023):
-		chn_horo = "Rabbit"
-	elif year in (1952, 1964, 1976, 1988, 2000, 2012, 2024):
-		chn_horo = "Dragon"
-	elif year in (1953, 1965, 1977, 1989, 2001, 2013, 2025):
-		chn_horo = "Snake"
-	elif year in (1954, 1966, 1978, 1990, 2002, 2014, 2026):
-		chn_horo = "Horse"
-	elif year in (1955, 1967, 1979, 1991, 2003, 2015,2027):
-		chn_horo = "Goat"
-	elif year in (1956, 1968, 1980, 1992, 2004, 2016, 2028):
-		chn_horo = "Monkey"
-	elif year in (1957, 1969, 1981, 1993, 2005, 2017, 2029):
-		chn_horo = "Rooster"
-	elif year in (1958, 1970, 1982, 1994, 2006, 2018, 2030):
-		chn_horo = "Dog"
-	elif year in (1959, 1971, 1983, 1995, 2007, 2019, 2031):
-		chn_horo = "Pig"
-	else:
-		print("This system works from year 1948 onwards, please try again.")
+    global chn_horo
+    if year in (1948, 1960, 1972, 1984, 1996, 2008, 2020):
+        chn_horo = "Rat"
+    elif year in (1949, 1961, 1973, 1985, 1997, 2009, 2021):
+        chn_horo = "Ox"
+    elif year in (1950, 1962, 1974, 1986, 1998, 2010, 2022):
+        chn_horo = "Tiger"
+    elif year in (1951, 1963, 1975, 1987, 1999, 2011, 2023):
+        chn_horo = "Rabbit"
+    elif year in (1952, 1964, 1976, 1988, 2000, 2012, 2024):
+        chn_horo = "Dragon"
+    elif year in (1953, 1965, 1977, 1989, 2001, 2013, 2025):
+        chn_horo = "Snake"
+    elif year in (1954, 1966, 1978, 1990, 2002, 2014, 2026):
+        chn_horo = "Horse"
+    elif year in (1955, 1967, 1979, 1991, 2003, 2015, 2027):
+        chn_horo = "Goat"
+    elif year in (1956, 1968, 1980, 1992, 2004, 2016, 2028):
+        chn_horo = "Monkey"
+    elif year in (1957, 1969, 1981, 1993, 2005, 2017, 2029):
+        chn_horo = "Rooster"
+    elif year in (1958, 1970, 1982, 1994, 2006, 2018, 2030):
+        chn_horo = "Dog"
+    elif year in (1959, 1971, 1983, 1995, 2007, 2019, 2031):
+        chn_horo = "Pig"
+    else:
+        print("This system works from year 1948 onwards, please try again.")
+
 
 chn_sign_description = {
     "Rat": "Personality traits: Ambitious, charming, talkative, resourceful, private, frugal, critical",
@@ -144,47 +146,49 @@ chn_sign_description = {
     "Pig": "Personality traits: Caring, generous, smart, outgoing, fearful, impatient, materialistic",
 }
 
+
 def chinese_horo_description():
-	if chn_horo == "Rat":
-		print(chn_sign_description["Rat"])
-	elif chn_horo == "Ox":
-		print(chn_sign_description["Ox"])
-	elif chn_horo == "Tiger":
-		print(chn_sign_description["Tiger"])
-	elif chn_horo == "Rabbit":
-		print(chn_sign_description["Rabbit"])
-	elif chn_horo == "Dragon":
-		print(chn_sign_description["Dragon"])
-	elif chn_horo == "Snake":
-		print(chn_sign_description["Snake"])
-	elif chn_horo == "Horse":
-		print(chn_sign_description["Horse"])
-	elif chn_horo == "Goat":
-		print(chn_sign_description["Goat"])
-	elif chn_horo == "Monkey":
-		print(chn_sign_description["Monkey"])
-	elif chn_horo == "Rooster":
-		print(chn_sign_description["Rooster"])
-	elif chn_horo == "Dog":
-		print(chn_sign_description["Dog"])
-	elif chn_horo == "Pig":
-		print(chn_sign_description["Pig"])
-	else:
-		print("ERR: Something went wrong... please try again")
+    if chn_horo == "Rat":
+        print(chn_sign_description["Rat"])
+    elif chn_horo == "Ox":
+        print(chn_sign_description["Ox"])
+    elif chn_horo == "Tiger":
+        print(chn_sign_description["Tiger"])
+    elif chn_horo == "Rabbit":
+        print(chn_sign_description["Rabbit"])
+    elif chn_horo == "Dragon":
+        print(chn_sign_description["Dragon"])
+    elif chn_horo == "Snake":
+        print(chn_sign_description["Snake"])
+    elif chn_horo == "Horse":
+        print(chn_sign_description["Horse"])
+    elif chn_horo == "Goat":
+        print(chn_sign_description["Goat"])
+    elif chn_horo == "Monkey":
+        print(chn_sign_description["Monkey"])
+    elif chn_horo == "Rooster":
+        print(chn_sign_description["Rooster"])
+    elif chn_horo == "Dog":
+        print(chn_sign_description["Dog"])
+    elif chn_horo == "Pig":
+        print(chn_sign_description["Pig"])
+    else:
+        print("ERR: Something went wrong... please try again")
+
 
 horoscope()
-print("---------------------------------------------------------------------------")
+print("---------------------------------------------------------------------")
 time.sleep(1)
-print("---------------------------------------------------------------------------")
+print("---------------------------------------------------------------------")
 time.sleep(1)
 print("Your Name is:", name.capitalize())
 time.sleep(1)
 print(name_list)
 time.sleep(1)
-print("---------------------------------------------------------------------------")
+print("---------------------------------------------------------------------")
 print("Please Wait, calculating data...")
 time.sleep(3)
-print("---------------------------------------------------------------------------")
+print("---------------------------------------------------------------------")
 time.sleep(1)
 print("You were born in:", str(day) + " " + str(month.capitalize()) + " " + str(year))
 time.sleep(1)
@@ -194,11 +198,11 @@ print(the_date)
 time.sleep(1)
 print("That means you have been alive for about " + str(days) + " days")
 time.sleep(1)
-print("---------------------------------------------------------------------------")
+print("---------------------------------------------------------------------")
 time.sleep(1)
 print("Please Wait, Processing Information...")
 time.sleep(3)
-print("---------------------------------------------------------------------------")
+print("---------------------------------------------------------------------")
 time.sleep(1)
 print("Your astrological sing is:", horo_sign)
 time.sleep(1)
@@ -206,11 +210,11 @@ print(horo_sign + " " + "is best described as :")
 time.sleep(1)
 horo_description()
 time.sleep(1)
-print("---------------------------------------------------------------------------")
+print("---------------------------------------------------------------------")
 time.sleep(1)
 print("Initializing contact with China.... Gathering Information:")
 time.sleep(3)
-print("---------------------------------------------------------------------------")
+print("---------------------------------------------------------------------")
 time.sleep(1)
 chinese_horo()
 time.sleep(1)
@@ -218,8 +222,8 @@ print("Your Chinese astrological sing is:", chn_horo)
 time.sleep(1)
 chinese_horo_description()
 time.sleep(1)
-print("---------------------------------------------------------------------------")
+print("---------------------------------------------------------------------")
 time.sleep(1)
-print("- Thank you for tyring out My Project 3 : Python application, THANK YOU!  -")
+print("- Thank you for tyring out My Project 3 : Python application  -------")
 time.sleep(1)
-print("- Communication Closed, please restart the application for different data -")
+print("------------------- Communication Closed-----------------------------")
