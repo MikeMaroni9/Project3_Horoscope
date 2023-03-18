@@ -113,6 +113,49 @@ def chinese_horo():
 	else:
 		print("This system works from year 1948 onwards, please try again.")
 
+chn_sign_description = {
+    "Rat": "Personality traits: Ambitious, charming, talkative, resourceful, private, frugal, critical",
+    "Ox": "Personality traits: Diligent, gentle, hardworking, reliable, patient, materialistic, stubborn",
+    "Tiger": "Personality traits: Confident, brave, magnetic, idealistic, thrill-seeking, arrogant, selfish",
+    "Rabbit": "Personality traits: Kind, sensitive, artistic, romantic, judgmental, timid, refined",
+    "Dragon": "Personality traits: Outspoken, energetic, generous, intelligent, perfectionistic, egocentric, impatient",
+    "Snake": "Personality traits: Clever, curious, alluring, wise, anxious, calculating, jealous",
+    "Horse": "Personality traits: Amusing, enthusiastic, independent, persuasive, irresponsible, moody, opportunistic",
+    "Goat": "Personality traits: Easygoing, empathetic, creative, cheerful, disorganized, impulsive lazy",
+    "Monkey": "Personality traits: Entertaining, intelligent, optimistic, sociable, fickle, secretive, unpredictable",
+    "Rooster": "Personality traits: Adventurous, charitable, funny, loyal, argumentative, boastful, self-involved",
+    "Dog": "Personality traits: Helpful, honest, trustworthy, unselfish, pessimistic, anxious, timid",
+    "Pig": "Personality traits: Caring, generous, smart, outgoing, fearful, impatient, materialistic",
+}
+
+def chinese_horo_description():
+	if chn_horo == "Rat":
+		print(chn_sign_description["Rat"])
+	elif chn_horo == "Ox":
+		print(chn_sign_description["Ox"])
+	elif chn_horo == "Tiger":
+		print(chn_sign_description["Tiger"])
+	elif chn_horo == "Rabbit":
+		print(chn_sign_description["Rabbit"])
+	elif chn_horo == "Dragon":
+		print(chn_sign_description["Dragon"])
+	elif chn_horo == "Snake":
+		print(chn_sign_description["Snake"])
+	elif chn_horo == "Horse":
+		print(chn_sign_description["Horse"])
+	elif chn_horo == "Goat":
+		print(chn_sign_description["Goat"])
+	elif chn_horo == "Monkey":
+		print(chn_sign_description["Monkey"])
+	elif chn_horo == "Rooster":
+		print(chn_sign_description["Rooster"])
+	elif chn_horo == "Dog":
+		print(chn_sign_description["Dog"])
+	elif chn_horo == "Pig":
+		print(chn_sign_description["Pig"])
+	else:
+		print("ERR: Something went wrong... please try again")
+
 horoscope()
 
 print("Your Name is:", name.capitalize())
@@ -122,6 +165,8 @@ print("Todays date is : ")
 print(the_date)
 print("That means you have been alive for about " + str(days) + " days")
 print("Your astrological sing is:", horo_sign)
+print(horo_sign + " " + "is best described as :")
 horo_description()
 chinese_horo()
 print("Your Chinese astrological sing is:", chn_horo)
+chinese_horo_description()
