@@ -1,4 +1,16 @@
 from datetime import datetime
+import time
+
+print("---------------------------------------------------------------------------")
+print("************ Welcome to your personalised Horoscope Checker ***************")
+print("---------------------------------------------------------------------------")
+print("                                  _ _")
+print("                                 | (_)")
+print("                     _______   __| |_  __ _  ___")
+print("                    |_  / _ \ / _` | |/ _` |/ __|")
+print("                     / / (_) | (_| | | (_| | (__ ")
+print("                    /___\___/ \__,_|_|\__,_|\___|_")
+print("---------------------------------------------------------------------------")
 
 name = input("Please enter Your name : ")
 year = int(input("Please Enter the year you were born (e.g.: 1984): "))
