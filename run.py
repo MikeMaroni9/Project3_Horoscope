@@ -1,8 +1,13 @@
+from datetime import datetime
+
 name = input("Please enter Your name : ")
 year = int(input("Please Enter the year you were born (e.g.: 1984): "))
 month = input("Input month of birth (e.g. january, may etc): ")
 day = int(input("Please enter the day you were born in (e.g. 17:)"))
 horo_sign = None
+days = (2023 - year) * 365
+the_date = datetime.now().date()
+
 
 def horoscope():
 	global horo_sign
@@ -35,4 +40,7 @@ horoscope()
 
 print("Your Name is:", name.capitalize())
 print("You were born in:", str(day) + " " + str(month.capitalize()) + " " + str(year))
+print("Todays date is : ")
+print(the_date)
+print("That means you have been alive for about " + str(days) + " days")
 print("Your astrological sing is:", horo_sign)
