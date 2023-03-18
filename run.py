@@ -7,6 +7,7 @@ day = int(input("Please enter the day you were born in (e.g. 17:)"))
 horo_sign = None
 days = (2023 - year) * 365
 the_date = datetime.now().date()
+name_list = [i for i in name]
 
 
 def horoscope():
@@ -39,6 +40,7 @@ def horoscope():
 horoscope()
 
 print("Your Name is:", name.capitalize())
+print(name_list)
 print("You were born in:", str(day) + " " + str(month.capitalize()) + " " + str(year))
 print("Todays date is : ")
 print(the_date)
