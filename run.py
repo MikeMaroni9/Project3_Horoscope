@@ -25,32 +25,36 @@ name_list = [i for i in name]
 
 def horoscope():
 	global horo_sign
-	if month == 'december':
-		horo_sign = 'Sagittarius' if (day < 22) else 'Capricorn'
-	elif month == 'january':
-		horo_sign = 'Capricorn' if (day < 20) else 'Aquarius'
-	elif month == 'february':
-		horo_sign = 'Aquarius' if (day < 19) else 'Pisces'
-	elif month == 'march':
-		horo_sign = 'Pisces' if (day < 21) else 'Aries'
-	elif month == 'april':
-		horo_sign = 'Aries' if (day < 20) else 'Taurus'
-	elif month == 'may':
-		horo_sign = 'Taurus' if (day < 21) else 'Gemini'
-	elif month == 'june':
-		horo_sign = 'Gemini' if (day < 21) else 'Cancer'
-	elif month == 'july':
-		horo_sign = 'Cancer' if (day < 23) else 'Leo'
-	elif month == 'august':
-		horo_sign = 'Leo' if (day < 23) else 'Virgo'
-	elif month == 'september':
-		horo_sign = 'Virgo' if (day < 23) else 'libra'
-	elif month == 'october':
-		horo_sign = 'Libra' if (day < 23) else 'scorpio'
-	elif month == 'november':
-		horo_sign = 'Scorpio' if (day < 22) else 'Sagittarius'
+	global month
+	if month in ('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'):
+		if month == 'december':
+			horo_sign = 'Sagittarius' if (day < 22) else 'Capricorn'
+		elif month == 'january':
+			horo_sign = 'Capricorn' if (day < 20) else 'Aquarius'
+		elif month == 'february':
+			horo_sign = 'Aquarius' if (day < 19) else 'Pisces'
+		elif month == 'march':
+			horo_sign = 'Pisces' if (day < 21) else 'Aries'
+		elif month == 'april':
+			horo_sign = 'Aries' if (day < 20) else 'Taurus'
+		elif month == 'may':
+			horo_sign = 'Taurus' if (day < 21) else 'Gemini'
+		elif month == 'june':
+			horo_sign = 'Gemini' if (day < 21) else 'Cancer'
+		elif month == 'july':
+			horo_sign = 'Cancer' if (day < 23) else 'Leo'
+		elif month == 'august':
+			horo_sign = 'Leo' if (day < 23) else 'Virgo'
+		elif month == 'september':
+			horo_sign = 'Virgo' if (day < 23) else 'Libra'
+		elif month == 'october':
+			horo_sign = 'Libra' if (day < 23) else 'Scorpio'
+		elif month == 'november':
+			horo_sign = 'Scorpio' if (day < 22) else 'Sagittarius'
+		else:
+			print("There has been an error, please try again !")
 	else:
-		print("There has been an error, please try again !")
+		print("Error, that's not a valid entry, please check you spelling and try again.")
 
 sign_description = {
     "Aries": "The first sign of the zodiac, Aries loves to be number one. Naturally, this dynamic fire sign is no stranger to competition. Bold and ambitious, Aries dives headfirst into even the most challenging situations—and they'll make sure they always come out on top!",
