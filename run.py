@@ -14,7 +14,9 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Horoscope')
 
-
+"""
+Google Sheet Data implementation for Sign Description
+"""
 signDescriptionAries = SHEET.worksheet('sign_description').col_values(1)
 signDescriptionTaurus = SHEET.worksheet('sign_description').col_values(2)
 signDescriptionGemini = SHEET.worksheet('sign_description').col_values(3)
@@ -24,9 +26,25 @@ signDescriptionVirgo = SHEET.worksheet('sign_description').col_values(6)
 signDescriptionLibra = SHEET.worksheet('sign_description').col_values(7)
 signDescriptionScorpio = SHEET.worksheet('sign_description').col_values(8)
 signDescriptionSagittarius = SHEET.worksheet('sign_description').col_values(9)
-signDescriptionCapicorn = SHEET.worksheet('sign_description').col_values(10)
+signDescriptionCapricorn = SHEET.worksheet('sign_description').col_values(10)
 signDescriptionAquarius = SHEET.worksheet('sign_description').col_values(11)
 signDescriptionPisces = SHEET.worksheet('sign_description').col_values(12)
+
+"""
+Google Sheets Data implementation for CHN Sign Descriptions
+"""
+signDescriptionRat = SHEET.worksheet('chn_sign_description').col_values(1)
+signDescriptionOx = SHEET.worksheet('chn_sign_description').col_values(2)
+signDescriptionTiger = SHEET.worksheet('chn_sign_description').col_values(3)
+signDescriptionRabbit = SHEET.worksheet('chn_sign_description').col_values(4)
+signDescriptionDragon = SHEET.worksheet('chn_sign_description').col_values(5)
+signDescriptionSnake = SHEET.worksheet('chn_sign_description').col_values(6)
+signDescriptionHorse = SHEET.worksheet('chn_sign_description').col_values(7)
+signDescriptionGoat = SHEET.worksheet('chn_sign_description').col_values(8)
+signDescriptionMonkey = SHEET.worksheet('chn_sign_description').col_values(9)
+signDescriptionRooster = SHEET.worksheet('chn_sign_description').col_values(10)
+signDescriptionDog = SHEET.worksheet('chn_sign_description').col_values(11)
+signDescriptionPig = SHEET.worksheet('chn_sign_description').col_values(12)
 
 
 
@@ -165,57 +183,37 @@ def chinese_horo():
         print("This system works from year 1948 onwards, please try again.")
 
 
-"""
-Chinese Personality trait dictionary corresponding to each of the signs.
-"""
-
-
-chn_sign_description = {
-    "Rat": "Personality traits: Ambitious, charming, talkative, resourceful, private, frugal, critical",
-    "Ox": "Personality traits: Diligent, gentle, hardworking, reliable, patient, materialistic, stubborn",
-    "Tiger": "Personality traits: Confident, brave, magnetic, idealistic, thrill-seeking, arrogant, selfish",
-    "Rabbit": "Personality traits: Kind, sensitive, artistic, romantic, judgmental, timid, refined",
-    "Dragon": "Personality traits: Outspoken, energetic, generous, intelligent, perfectionistic, egocentric, impatient",
-    "Snake": "Personality traits: Clever, curious, alluring, wise, anxious, calculating, jealous",
-    "Horse": "Personality traits: Amusing, enthusiastic, independent, persuasive, irresponsible, moody, opportunistic",
-    "Goat": "Personality traits: Easygoing, empathetic, creative, cheerful, disorganized, impulsive lazy",
-    "Monkey": "Personality traits: Entertaining, intelligent, optimistic, sociable, fickle, secretive, unpredictable",
-    "Rooster": "Personality traits: Adventurous, charitable, funny, loyal, argumentative, boastful, self-involved",
-    "Dog": "Personality traits: Helpful, honest, trustworthy, unselfish, pessimistic, anxious, timid",
-    "Pig": "Personality traits: Caring, generous, smart, outgoing, fearful, impatient, materialistic",
-}
 
 
 """
 Function to assign correct Chinese description to correct sign.
 """
 
-
 def chinese_horo_description():
     if chn_horo == "Rat":
-        print(chn_sign_description["Rat"])
+        print(signDescriptionRat)
     elif chn_horo == "Ox":
-        print(chn_sign_description["Ox"])
+        print(signDescriptionOx)
     elif chn_horo == "Tiger":
-        print(chn_sign_description["Tiger"])
+        print(signDescriptionTiger)
     elif chn_horo == "Rabbit":
-        print(chn_sign_description["Rabbit"])
+        print(signDescriptionRabbit)
     elif chn_horo == "Dragon":
-        print(chn_sign_description["Dragon"])
+        print(signDescriptionRabbit)
     elif chn_horo == "Snake":
-        print(chn_sign_description["Snake"])
+        print(signDescriptionSnake)
     elif chn_horo == "Horse":
-        print(chn_sign_description["Horse"])
+        print(signDescriptionHorse)
     elif chn_horo == "Goat":
-        print(chn_sign_description["Goat"])
+        print(signDescriptionGoat)
     elif chn_horo == "Monkey":
-        print(chn_sign_description["Monkey"])
+        print(signDescriptionMonkey)
     elif chn_horo == "Rooster":
-        print(chn_sign_description["Rooster"])
+        print(signDescriptionRooster)
     elif chn_horo == "Dog":
-        print(chn_sign_description["Dog"])
+        print(signDescriptionDog)
     elif chn_horo == "Pig":
-        print(chn_sign_description["Pig"])
+        print(signDescriptionPig)
     else:
         print("ERR: Something went wrong... please try again")
 
@@ -225,7 +223,7 @@ print("---------------------------------------------------------------------")
 time.sleep(1)
 print("---------------------------------------------------------------------")
 time.sleep(1)
-print("Your Name is:", name.capitalize())
+print("Your Name is:", name.upper())
 time.sleep(1)
 print(name_list)
 time.sleep(1)
