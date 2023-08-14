@@ -39,7 +39,21 @@ name_list = [i for i in name]
 print("---------------------------------------------------------------------")
 
 
+def is_valid_year(year):
+    return 1948 <= year <= 2031
 
+while True:
+    try:
+        enter_year = int(input("Please enter a YEAR you were born in: (YYYY format, ex: 1984): \n"))
+        if is_valid_year(enter_year):
+            print("correct format year has been entered")
+            break
+        else:
+            print("Year ranges currently available in software (1948 to 2031)")
+    except ValueError:
+        print("The data is invalid. Please enter a valid year.")
+
+print("Please wait, while the system loads all components...")
 
 
 
@@ -70,7 +84,6 @@ print("---------------------------------------------------------------------")
 General Input Scheme and Variables
 """
 """
-name = input("Please enter Your name : \n")
 month = input("Input month of birth (e.g. january, may etc): \n").lower()
 year = int(input("Please Enter the year you were born (e.g.: 1984): \n"))
 day = int(input("Please enter the day you were born in (e.g. 17:)\n"))
@@ -78,7 +91,6 @@ horo_sign = None
 chn_horo = None
 days = (2023 - year) * 365
 the_date = datetime.now().date()
-name_list = [i for i in name]
 """
 
 """
