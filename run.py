@@ -57,8 +57,18 @@ print("Please wait, while the system loads all components...")
 
 
 
+def main():
+    valid_months = ['January', 'February', 'March', 'April', 'May', 'June',
+                    'July', 'August', 'September', 'October', 'November', 'December']
+    while True:
+        enter_month = input("Now the MONTH you were born in (ex. May, June:) \n")
+        month = enter_month.title()
 
-
+        if month in valid_months:
+            print("Thank You!")
+            break
+        else:
+            print("Data format is not correct. Please try again.")
 
 
 
@@ -274,6 +284,7 @@ def chinese_horo_description():
 
 
 """
+main()
 print("---------------------------------------------------------------------")
 time.sleep(1)
 print("---------------------------------------------------------------------")
