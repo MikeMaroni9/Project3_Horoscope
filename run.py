@@ -60,6 +60,7 @@ days = (2023 - int(enter_year)) * 365
 
 def main():
     global month
+    global zodiac_sign
     valid_months = ['January', 'February', 'March', 'April', 'May', 'June',
                     'July', 'August', 'September', 'October', 'November', 'December']
     while True:
@@ -73,7 +74,7 @@ def main():
             print("Data format is not correct. Please try again.")
     selected_date = get_valid_date()
     horoscope(month, selected_date)
-
+    zodiac_sign = chinese_horo(enter_year) 
     
 def get_valid_date():
     global date
@@ -155,121 +156,37 @@ def horo_description(horo_sign):
         print("ERR: Something went wrong... please try again")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-"""
-General Input Scheme and Variables
-
-chn_horo = None
-
-
-
-
-
-
-Function to print out matching descriptions for each Zodiac Sign
-"""
-"""
-
-
-def horo_description():
-    if horo_sign == "Aries":
-        print(signDescriptionAries)
-    elif horo_sign == "Taurus":
-        print(signDescriptionTaurus)
-    elif horo_sign == "Gemini":
-        print(signDescriptionGemini)
-    elif horo_sign == "Cancer":
-        print(signDescriptionCancer)
-    elif horo_sign == "Leo":
-        print(signDescriptionLeo)
-    elif horo_sign == "Virgo":
-        print(signDescriptionVirgo)
-    elif horo_sign == "Libra":
-        print(signDescriptionLibra)
-    elif horo_sign == "Scorpio":
-        print(signDescriptionScorpio)
-    elif horo_sign == "Sagittarius":
-        print(signDescriptionSagittarius)
-    elif horo_sign == "Capricorn":
-        print(signDescriptionCapricorn)
-    elif horo_sign == "Aquarius":
-        print(signDescriptionAquarius)
-    elif horo_sign == "Pisces":
-        print(signDescriptionPisces)
-    else:
-        print("ERR: Something went wrong... please try again")
-
-
-"""
-"""
-Google Sheet Data implementation for Sign Description
-"""
-"""
-signDescriptionAries = SHEET.worksheet('sign_description').col_values(1)
-signDescriptionTaurus = SHEET.worksheet('sign_description').col_values(2)
-signDescriptionGemini = SHEET.worksheet('sign_description').col_values(3)
-signDescriptionCancer = SHEET.worksheet('sign_description').col_values(4)
-signDescriptionLeo = SHEET.worksheet('sign_description').col_values(5)
-signDescriptionVirgo = SHEET.worksheet('sign_description').col_values(6)
-signDescriptionLibra = SHEET.worksheet('sign_description').col_values(7)
-signDescriptionScorpio = SHEET.worksheet('sign_description').col_values(8)
-signDescriptionSagittarius = SHEET.worksheet('sign_description').col_values(9)
-signDescriptionCapricorn = SHEET.worksheet('sign_description').col_values(10)
-signDescriptionAquarius = SHEET.worksheet('sign_description').col_values(11)
-signDescriptionPisces = SHEET.worksheet('sign_description').col_values(12)
-
-
-"""
-"""
-Chinese Horoscope Sign Function
-"""
-"""
-
-
-def chinese_horo():
-    global chn_horo
+def chinese_horo(year):
     if year in (1948, 1960, 1972, 1984, 1996, 2008, 2020):
-        chn_horo = "Rat"
+        return "Rat"
     elif year in (1949, 1961, 1973, 1985, 1997, 2009, 2021):
-        chn_horo = "Ox"
+        return "Ox"
     elif year in (1950, 1962, 1974, 1986, 1998, 2010, 2022):
-        chn_horo = "Tiger"
+        return "Tiger"
     elif year in (1951, 1963, 1975, 1987, 1999, 2011, 2023):
-        chn_horo = "Rabbit"
+        return "Rabbit"
     elif year in (1952, 1964, 1976, 1988, 2000, 2012, 2024):
-        chn_horo = "Dragon"
+        return "Dragon"
     elif year in (1953, 1965, 1977, 1989, 2001, 2013, 2025):
-        chn_horo = "Snake"
+        return "Snake"
     elif year in (1954, 1966, 1978, 1990, 2002, 2014, 2026):
-        chn_horo = "Horse"
+        return "Horse"
     elif year in (1955, 1967, 1979, 1991, 2003, 2015, 2027):
-        chn_horo = "Goat"
+        return "Goat"
     elif year in (1956, 1968, 1980, 1992, 2004, 2016, 2028):
-        chn_horo = "Monkey"
+        return "Monkey"
     elif year in (1957, 1969, 1981, 1993, 2005, 2017, 2029):
-        chn_horo = "Rooster"
+        return "Rooster"
     elif year in (1958, 1970, 1982, 1994, 2006, 2018, 2030):
-        chn_horo = "Dog"
+        return "Dog"
     elif year in (1959, 1971, 1983, 1995, 2007, 2019, 2031):
-        chn_horo = "Pig"
+        return "Pig"
     else:
         print("This system works from year 1948 onwards, please try again.")
 
-"""
+
 """
 Google Sheets Data implementation for CHN Sign Descriptions
-"""
 """
 signDescriptionRat = SHEET.worksheet('chn_sign_description').col_values(1)
 signDescriptionOx = SHEET.worksheet('chn_sign_description').col_values(2)
@@ -284,44 +201,34 @@ signDescriptionRooster = SHEET.worksheet('chn_sign_description').col_values(10)
 signDescriptionDog = SHEET.worksheet('chn_sign_description').col_values(11)
 signDescriptionPig = SHEET.worksheet('chn_sign_description').col_values(12)
 
+def chinese_horo_description(zodiac_sign):
+    if zodiac_sign == "Rat" :
+        description = signDescriptionRat
+    elif zodiac_sign == "Ox":
+        description = signDescriptionOx
+    elif zodiac_sign == "Tiger":
+        description = signDescriptionTiger
+    elif zodiac_sign == "Rabbit":
+        description = signDescriptionRabbit
+    elif zodiac_sign == "Dragon":
+        description = signDescriptionDragon
+    elif zodiac_sign == "Snake":
+        description = signDescriptionSnake
+    elif zodiac_sign == "Horse":
+        description = signDescriptionHorse
+    elif zodiac_sign == "Goat":
+        description = signDescriptionGoat
+    elif zodiac_sign == "Monkey":
+        description = signDescriptionMonkey
+    elif zodiac_sign == "Rooster":
+        description = signDescriptionRooster
+    elif zodiac_sign == "Dog":
+        description = signDescriptionDog
+    elif zodiac_sign == "Pig":
+        description = signDescriptionPig
+    return description
 
 
-"""
-"""
-Function to assign correct Chinese description to correct sign.
-"""
-"""
-
-def chinese_horo_description():
-    if chn_horo == "Rat":
-        print(signDescriptionRat)
-    elif chn_horo == "Ox":
-        print(signDescriptionOx)
-    elif chn_horo == "Tiger":
-        print(signDescriptionTiger)
-    elif chn_horo == "Rabbit":
-        print(signDescriptionRabbit)
-    elif chn_horo == "Dragon":
-        print(signDescriptionRabbit)
-    elif chn_horo == "Snake":
-        print(signDescriptionSnake)
-    elif chn_horo == "Horse":
-        print(signDescriptionHorse)
-    elif chn_horo == "Goat":
-        print(signDescriptionGoat)
-    elif chn_horo == "Monkey":
-        print(signDescriptionMonkey)
-    elif chn_horo == "Rooster":
-        print(signDescriptionRooster)
-    elif chn_horo == "Dog":
-        print(signDescriptionDog)
-    elif chn_horo == "Pig":
-        print(signDescriptionPig)
-    else:
-        print("ERR: Something went wrong... please try again")
-
-
-"""
 main()
 print("---------------------------------------------------------------------")
 time.sleep(1)
@@ -363,16 +270,12 @@ print("Initializing contact with China.... Gathering Information:")
 time.sleep(3)
 print("---------------------------------------------------------------------")
 time.sleep(1)
-"""
-chinese_horo()
+print("Your Chinese astrological sing is:", zodiac_sign)
 time.sleep(1)
-print("Your Chinese astrological sing is:", chn_horo)
-time.sleep(1)
-chinese_horo_description()
+print(chinese_horo_description(zodiac_sign))
 time.sleep(1)
 print("---------------------------------------------------------------------")
 time.sleep(1)
 print("- Thank you for trying out My Project 3 : Python application  -------")
 time.sleep(1)
 print("------------------- Communication Closed-----------------------------")
-"""
