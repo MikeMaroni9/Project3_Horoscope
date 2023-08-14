@@ -72,6 +72,7 @@ def main():
         else:
             print("Data format is not correct. Please try again.")
     selected_date = get_valid_date()
+    horoscope(month, selected_date)
 
     
 def get_valid_date():
@@ -86,10 +87,72 @@ def get_valid_date():
         except ValueError:
             print("Error: Please enter a valid number.")
 
+def horoscope(month, day):
+    global horo_sign  
+    if month == 'December':
+        horo_sign = 'Sagittarius' if day < 22 else 'Capricorn'
+    elif month == 'January':
+        horo_sign = 'Capricorn' if day < 20 else 'Aquarius'
+    elif month == 'February':
+        horo_sign = 'Aquarius' if day < 19 else 'Pisces'
+    elif month == 'March':
+        horo_sign = 'Pisces' if day < 21 else 'Aries'
+    elif month == 'April':
+        horo_sign = 'Aries' if day < 20 else 'Taurus'
+    elif month == 'May':
+        horo_sign = 'Taurus' if day < 21 else 'Gemini'
+    elif month == 'June':
+        horo_sign = 'Gemini' if day < 21 else 'Cancer'
+    elif month == 'July':
+        horo_sign = 'Cancer' if day < 23 else 'Leo'
+    elif month == 'August':
+        horo_sign = 'Leo' if day < 23 else 'Virgo'
+    elif month == 'September':
+        horo_sign = 'Virgo' if day < 23 else 'Libra'
+    elif month == 'October':
+        horo_sign = 'Libra' if day < 23 else 'Scorpio'
+    elif month == 'November':
+        horo_sign = 'Scorpio' if day < 22 else 'Sagittarius'
+    return horo_sign
 
 
+"""
+Google Sheet Data implementation for Sign Description
+"""
 
+signDescriptionAries = SHEET.worksheet('sign_description').col_values(1)
+signDescriptionTaurus = SHEET.worksheet('sign_description').col_values(2)
+signDescriptionGemini = SHEET.worksheet('sign_description').col_values(3)
+signDescriptionCancer = SHEET.worksheet('sign_description').col_values(4)
+signDescriptionLeo = SHEET.worksheet('sign_description').col_values(5)
+signDescriptionVirgo = SHEET.worksheet('sign_description').col_values(6)
+signDescriptionLibra = SHEET.worksheet('sign_description').col_values(7)
+signDescriptionScorpio = SHEET.worksheet('sign_description').col_values(8)
+signDescriptionSagittarius = SHEET.worksheet('sign_description').col_values(9)
+signDescriptionCapricorn = SHEET.worksheet('sign_description').col_values(10)
+signDescriptionAquarius = SHEET.worksheet('sign_description').col_values(11)
+signDescriptionPisces = SHEET.worksheet('sign_description').col_values(12)
 
+def horo_description(horo_sign):
+    sign_descriptions = {
+        "Aries": signDescriptionAries,
+        "Taurus": signDescriptionTaurus,
+        "Gemini": signDescriptionGemini,
+        "Cancer": signDescriptionCancer,
+        "Leo": signDescriptionLeo,
+        "Virgo": signDescriptionVirgo,
+        "Libra": signDescriptionLibra,
+        "Scorpio": signDescriptionScorpio,
+        "Sagittarius": signDescriptionSagittarius,
+        "Capricorn": signDescriptionCapricorn,
+        "Aquarius": signDescriptionAquarius,
+        "Pisces": signDescriptionPisces
+    }
+
+    if horo_sign in sign_descriptions:
+        print(sign_descriptions[horo_sign])
+    else:
+        print("ERR: Something went wrong... please try again")
 
 
 
@@ -106,49 +169,14 @@ def get_valid_date():
 
 """
 General Input Scheme and Variables
-"""
-"""
-horo_sign = None
+
 chn_horo = None
 
-"""
-
-"""
-def horoscope():
-    global horo_sign
-    if month in ('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'):
-        if month == 'december':
-            horo_sign = 'Sagittarius' if (day < 22) else 'Capricorn'
-        elif month == 'january':
-            horo_sign = 'Capricorn' if (day < 20) else 'Aquarius'
-        elif month == 'february':
-            horo_sign = 'Aquarius' if (day < 19) else 'Pisces'
-        elif month == 'march':
-            horo_sign = 'Pisces' if (day < 21) else 'Aries'
-        elif month == 'april':
-            horo_sign = 'Aries' if (day < 20) else 'Taurus'
-        elif month == 'may':
-            horo_sign = 'Taurus' if (day < 21) else 'Gemini'
-        elif month == 'june':
-            horo_sign = 'Gemini' if (day < 21) else 'Cancer'
-        elif month == 'july':
-            horo_sign = 'Cancer' if (day < 23) else 'Leo'
-        elif month == 'august':
-            horo_sign = 'Leo' if (day < 23) else 'Virgo'
-        elif month == 'september':
-            horo_sign = 'Virgo' if (day < 23) else 'Libra'
-        elif month == 'october':
-            horo_sign = 'Libra' if (day < 23) else 'Scorpio'
-        elif month == 'november':
-            horo_sign = 'Scorpio' if (day < 22) else 'Sagittarius'
-        else:
-            print("There has been an error, please try again !")
-    else:
-        print("Error, that's not a valid entry, please check your spelling.")
 
 
-"""
-"""
+
+
+
 Function to print out matching descriptions for each Zodiac Sign
 """
 """
@@ -322,12 +350,12 @@ print("Please Wait, Processing Information...")
 time.sleep(3)
 print("---------------------------------------------------------------------")
 time.sleep(1)
-"""
+
 print("Your astrological sing is:", horo_sign)
 time.sleep(1)
 print(horo_sign + " " + "is best described as :")
 time.sleep(1)
-horo_description()
+horo_description(horo_sign)
 time.sleep(1)
 print("---------------------------------------------------------------------")
 time.sleep(1)
@@ -335,6 +363,7 @@ print("Initializing contact with China.... Gathering Information:")
 time.sleep(3)
 print("---------------------------------------------------------------------")
 time.sleep(1)
+"""
 chinese_horo()
 time.sleep(1)
 print("Your Chinese astrological sing is:", chn_horo)
