@@ -69,8 +69,19 @@ def main():
             break
         else:
             print("Data format is not correct. Please try again.")
+    selected_date = get_valid_date()
 
-
+    
+def get_valid_date():
+    while True:
+        try:
+            date = int(input("And finally DAY of the month you were born in. 1 to 31: \n"))
+            if 1 <= date <= 31:
+                return date
+            else:
+                print("Error: Date must be between 1 and 31.")
+        except ValueError:
+            print("Error: Please enter a valid number.")
 
 
 
@@ -94,9 +105,6 @@ def main():
 General Input Scheme and Variables
 """
 """
-month = input("Input month of birth (e.g. january, may etc): \n").lower()
-year = int(input("Please Enter the year you were born (e.g.: 1984): \n"))
-day = int(input("Please enter the day you were born in (e.g. 17:)\n"))
 horo_sign = None
 chn_horo = None
 days = (2023 - year) * 365
