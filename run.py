@@ -29,9 +29,46 @@ print("                    |_  / _ \ / _` | |/ _` |/ __|")
 print("                     / / (_) | (_| | | (_| | (__ ")
 print("                    /___\___/ \__,_|_|\__,_|\___|_")
 print("---------------------------------------------------------------------")
+print("---------------------------------------------------------------------")
+time.sleep(2)
+print("---------------Greetings, let us begin, shall we ?-------------------")
+print("---------------------------------------------------------------------")
+time.sleep(1)
+name = input("Please enter Your name or leave it empty if you wish to remain anonymous: \n")
+name_list = [i for i in name]
+print("---------------------------------------------------------------------")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 """
 General Input Scheme and Variables
+"""
 """
 name = input("Please enter Your name : \n")
 month = input("Input month of birth (e.g. january, may etc): \n").lower()
@@ -42,7 +79,7 @@ chn_horo = None
 days = (2023 - year) * 365
 the_date = datetime.now().date()
 name_list = [i for i in name]
-
+"""
 
 """
 def horoscope():
@@ -224,7 +261,7 @@ def chinese_horo_description():
         print("ERR: Something went wrong... please try again")
 
 
-horoscope()
+"""
 print("---------------------------------------------------------------------")
 time.sleep(1)
 print("---------------------------------------------------------------------")
@@ -238,6 +275,7 @@ print("Please Wait, calculating data...")
 time.sleep(3)
 print("---------------------------------------------------------------------")
 time.sleep(1)
+"""
 print("You were born in:", str(day) + " " + str(month.capitalize()) + " " + str(year))
 time.sleep(1)
 print("Today's date is : ")
