@@ -13,7 +13,7 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Horoscope')
-
+the_date = datetime.now().date()
 
 
 """
@@ -41,6 +41,7 @@ print("---------------------------------------------------------------------")
 
 def is_valid_year(year):
     return 1948 <= year <= 2031
+    global enter_year
 
 while True:
     try:
@@ -55,9 +56,10 @@ while True:
 
 print("Please wait, while the system loads all components...")
 
-
+days = (2023 - int(enter_year)) * 365
 
 def main():
+    global month
     valid_months = ['January', 'February', 'March', 'April', 'May', 'June',
                     'July', 'August', 'September', 'October', 'November', 'December']
     while True:
@@ -73,6 +75,7 @@ def main():
 
     
 def get_valid_date():
+    global date
     while True:
         try:
             date = int(input("And finally DAY of the month you were born in. 1 to 31: \n"))
@@ -107,8 +110,7 @@ General Input Scheme and Variables
 """
 horo_sign = None
 chn_horo = None
-days = (2023 - year) * 365
-the_date = datetime.now().date()
+
 """
 
 """
@@ -306,8 +308,7 @@ print("Please Wait, calculating data...")
 time.sleep(3)
 print("---------------------------------------------------------------------")
 time.sleep(1)
-"""
-print("You were born in:", str(day) + " " + str(month.capitalize()) + " " + str(year))
+print("You were born in:", str(date) + " " + str(month.capitalize()) + " " + str(enter_year))
 time.sleep(1)
 print("Today's date is : ")
 time.sleep(1)
@@ -321,6 +322,7 @@ print("Please Wait, Processing Information...")
 time.sleep(3)
 print("---------------------------------------------------------------------")
 time.sleep(1)
+"""
 print("Your astrological sing is:", horo_sign)
 time.sleep(1)
 print(horo_sign + " " + "is best described as :")
