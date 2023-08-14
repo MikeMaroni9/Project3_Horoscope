@@ -14,38 +14,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Horoscope')
 
-"""
-Google Sheet Data implementation for Sign Description
-"""
-signDescriptionAries = SHEET.worksheet('sign_description').col_values(1)
-signDescriptionTaurus = SHEET.worksheet('sign_description').col_values(2)
-signDescriptionGemini = SHEET.worksheet('sign_description').col_values(3)
-signDescriptionCancer = SHEET.worksheet('sign_description').col_values(4)
-signDescriptionLeo = SHEET.worksheet('sign_description').col_values(5)
-signDescriptionVirgo = SHEET.worksheet('sign_description').col_values(6)
-signDescriptionLibra = SHEET.worksheet('sign_description').col_values(7)
-signDescriptionScorpio = SHEET.worksheet('sign_description').col_values(8)
-signDescriptionSagittarius = SHEET.worksheet('sign_description').col_values(9)
-signDescriptionCapricorn = SHEET.worksheet('sign_description').col_values(10)
-signDescriptionAquarius = SHEET.worksheet('sign_description').col_values(11)
-signDescriptionPisces = SHEET.worksheet('sign_description').col_values(12)
-
-"""
-Google Sheets Data implementation for CHN Sign Descriptions
-"""
-signDescriptionRat = SHEET.worksheet('chn_sign_description').col_values(1)
-signDescriptionOx = SHEET.worksheet('chn_sign_description').col_values(2)
-signDescriptionTiger = SHEET.worksheet('chn_sign_description').col_values(3)
-signDescriptionRabbit = SHEET.worksheet('chn_sign_description').col_values(4)
-signDescriptionDragon = SHEET.worksheet('chn_sign_description').col_values(5)
-signDescriptionSnake = SHEET.worksheet('chn_sign_description').col_values(6)
-signDescriptionHorse = SHEET.worksheet('chn_sign_description').col_values(7)
-signDescriptionGoat = SHEET.worksheet('chn_sign_description').col_values(8)
-signDescriptionMonkey = SHEET.worksheet('chn_sign_description').col_values(9)
-signDescriptionRooster = SHEET.worksheet('chn_sign_description').col_values(10)
-signDescriptionDog = SHEET.worksheet('chn_sign_description').col_values(11)
-signDescriptionPig = SHEET.worksheet('chn_sign_description').col_values(12)
-
 
 
 """
@@ -77,10 +45,6 @@ name_list = [i for i in name]
 
 
 """
-Function to Check for Zodiac Sign to assign to the user
-"""
-
-
 def horoscope():
     global horo_sign
     if month in ('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'):
@@ -115,7 +79,9 @@ def horoscope():
 
 
 """
+"""
 Function to print out matching descriptions for each Zodiac Sign
+"""
 """
 
 
@@ -149,7 +115,28 @@ def horo_description():
 
 
 """
+"""
+Google Sheet Data implementation for Sign Description
+"""
+"""
+signDescriptionAries = SHEET.worksheet('sign_description').col_values(1)
+signDescriptionTaurus = SHEET.worksheet('sign_description').col_values(2)
+signDescriptionGemini = SHEET.worksheet('sign_description').col_values(3)
+signDescriptionCancer = SHEET.worksheet('sign_description').col_values(4)
+signDescriptionLeo = SHEET.worksheet('sign_description').col_values(5)
+signDescriptionVirgo = SHEET.worksheet('sign_description').col_values(6)
+signDescriptionLibra = SHEET.worksheet('sign_description').col_values(7)
+signDescriptionScorpio = SHEET.worksheet('sign_description').col_values(8)
+signDescriptionSagittarius = SHEET.worksheet('sign_description').col_values(9)
+signDescriptionCapricorn = SHEET.worksheet('sign_description').col_values(10)
+signDescriptionAquarius = SHEET.worksheet('sign_description').col_values(11)
+signDescriptionPisces = SHEET.worksheet('sign_description').col_values(12)
+
+
+"""
+"""
 Chinese Horoscope Sign Function
+"""
 """
 
 
@@ -182,11 +169,30 @@ def chinese_horo():
     else:
         print("This system works from year 1948 onwards, please try again.")
 
+"""
+"""
+Google Sheets Data implementation for CHN Sign Descriptions
+"""
+"""
+signDescriptionRat = SHEET.worksheet('chn_sign_description').col_values(1)
+signDescriptionOx = SHEET.worksheet('chn_sign_description').col_values(2)
+signDescriptionTiger = SHEET.worksheet('chn_sign_description').col_values(3)
+signDescriptionRabbit = SHEET.worksheet('chn_sign_description').col_values(4)
+signDescriptionDragon = SHEET.worksheet('chn_sign_description').col_values(5)
+signDescriptionSnake = SHEET.worksheet('chn_sign_description').col_values(6)
+signDescriptionHorse = SHEET.worksheet('chn_sign_description').col_values(7)
+signDescriptionGoat = SHEET.worksheet('chn_sign_description').col_values(8)
+signDescriptionMonkey = SHEET.worksheet('chn_sign_description').col_values(9)
+signDescriptionRooster = SHEET.worksheet('chn_sign_description').col_values(10)
+signDescriptionDog = SHEET.worksheet('chn_sign_description').col_values(11)
+signDescriptionPig = SHEET.worksheet('chn_sign_description').col_values(12)
 
 
 
 """
+"""
 Function to assign correct Chinese description to correct sign.
+"""
 """
 
 def chinese_horo_description():
@@ -269,3 +275,4 @@ time.sleep(1)
 print("- Thank you for trying out My Project 3 : Python application  -------")
 time.sleep(1)
 print("------------------- Communication Closed-----------------------------")
+"""
