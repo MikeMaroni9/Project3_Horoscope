@@ -84,7 +84,8 @@ def main():
     selected_date = get_valid_date()
     horoscope(month, selected_date)
     zodiac_sign = chinese_horo(enter_year) 
-    
+
+
 """
 User input and error checking of the day of the month he was born in
 """
@@ -99,6 +100,7 @@ def get_valid_date():
                 print("Error: Date must be between 1 and 31.")
         except ValueError:
             print("Error: Please enter a valid number.")
+
 
 """
 Function to assing correct Horoscope sign to the user based on the data he has entered
@@ -171,6 +173,7 @@ def horo_description(horo_sign):
         print(sign_descriptions[horo_sign])
     else:
         print("ERR: Something went wrong... please try again")
+
 
 """
 Function checking for the correct Chinese horoscope based on the year he was born in
