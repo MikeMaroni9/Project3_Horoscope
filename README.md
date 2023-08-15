@@ -1,40 +1,63 @@
-<h1> Horoscope Checker - Zodiac </h1>
+<h1> Horoscope Checker - Zodiac Version 2.0</h1>
 <a href="https://ibb.co/SN53Mrh"><img src="https://i.ibb.co/F6mDyVS/amiresponsive.png" alt="amiresponsive" border="0"></a>
-<p> This is a relatively simple horoscope application that uses user input data to generate user details, horoscope sign, description and Chinese horoscope about the user. </p>
-<p> As I was mourning loss in the family I was hoping for an extension but haven't heard nothing back I decided to give my best and at least make something that I can hand in.</p>
-<p> Have been working on this project for past two days now and I hope that it is enough to pass the python course. I could have included more of my knowledge, make classes and include error checking, and all other good things, but frankly I am running out of time.</p>
+<p> This is my updated project based relatively simple horoscope application that uses user input data to generate user details, horoscope sign, description and Chinese horoscope about the user. </p>
+<p> First iteration of this project failed, I have updated the project to have more robust error checking, updated functions, and Google Drive API integration, used as a database</p>
+
 <h2> The Process of the Program</h2>
-    <ul>You are introduced to the program with a simple ASCII artwork</ul>
-    <a href="https://ibb.co/xqJGFqx"><img src="https://i.ibb.co/chDtYh4/pro1.png" alt="pro1" border="0"></a>
-    <ul>You are then being asked for your input of : Name, Year, Month and Day of your Birth</ul>
-    <a href="https://ibb.co/7YQ4nvT"><img src="https://i.ibb.co/j6zRyhx/pro2.png" alt="pro2" border="0"></a>
-    <ul>After quick calculation you are given information about your Horoscope sign, personal traits.</ul>
-    <ul>With Chinese horoscope and charectaristics being included as a bonus.</ul>
-    <a href="https://ibb.co/84mGQ4g"><img src="https://i.ibb.co/S76HZ7w/pro3.png" alt="pro3" border="0"></a>
+    <ul>You are introduced to the program with a simple ASCII artwork and asked to enter your name</ul>
+    <ul>This could be left empty and skipped, in which case system will assign that you wished to remain anonymous.</ul>
+    <a href="https://ibb.co/j5XK4S0"><img src="https://i.ibb.co/H28vgjw/1.png" alt="1" border="0"></a>
+    <br>
+    <ul>Then you are asked the year you were born in, this data is used to calculate "days alive" and Chinese Horoscope function:</ul>
+    <a href="https://ibb.co/d7VNp98"><img src="https://i.ibb.co/QXTWHBy/2.png" alt="2" border="0"></a>
+    <ul>Then you are asked to enter your month. Used to determining one of two possible Western Horoscope signs:</ul>
+    <a href="https://ibb.co/L17wFNF"><img src="https://i.ibb.co/w4mHkck/3.png" alt="3" border="0"></a>
+    <ul>Finally, the exact date you were born in, to narrow down the correct Horoscope Sign:</ul>
+    <a href="https://ibb.co/VL58WwQ"><img src="https://i.ibb.co/wdj1Ncw/4.png" alt="4" border="0"></a>
+    <ul>Then the functions determine which data to print out and gives you the result:</ul>
+    <a href="https://ibb.co/syrXY4T"><img src="https://i.ibb.co/72F0mD3/5.png" alt="5" border="0"></a>
+    <ul>And the Chinese horoscope part:</ul>
+    <a href="https://ibb.co/0cgVycM"><img src="https://i.ibb.co/Vt7pYtS/6.png" alt="6" border="0"></a>
 
 <h2>Testing and Error Checking<h2>
-    <ul>I have been testing out the program extensively.</ul>
-    <ul>I have added all possible months in the list that will print out the error if invalid month is included.</ul>
+    <p>I have been testing out the program extensively, original functions were developed to print out if the data input was correct and printed out statements if something went wrong, as well as acknoledgment if the functions worked correcly.</p>
+    <ul>Some of these print statements were removed for the better flow of the project, but in case of the wrong input, it still displays what went wrong with the print out statement and asks the user to input the data again.</ul>
+    <ul>Correct input of the month is compared with the list of predefined months, that will print out the error if invalid month is included.</ul>
     <ul>Months can be input either way, lower case or all caps, they will be transformed to usable format.</ul>
-    <ul>Also the Chinese Horoscope system is working from year 1948, if year before that has been added, the messege will be displayed about the error.</ul>
-    <ul>The one thing that due the time constraint I didn't manage to include is error checking for strings being inputed as numbers.</ul>
+    <ul>Also the Chinese Horoscope system is working from year 1948-2031, if other years are included. the system will show error notification that the current version works only with this range of years.</ul>
+    <ul>I personally couldn't get this code to break, and I posted the heroku link to on the Slacks #peer-code-review, where nobody found an error with the code as well.</ul> 
+    
 
 <h2>Deployment<h2>
     <ul>I have commited all the files and pushed them on to the repository. </ul>
-    <ul>Connected the project with the Heroku and you can view the finished project here:</ul>
-    <ul>https://zodiac-horoscope.herokuapp.com/ </ul>
+    <ul>Created requirement file for the dependencies used for the project to run:</ul>
+    <a href="https://ibb.co/WnSTp8Z"><img src="https://i.ibb.co/Q9s5jSL/step-1-requirements-file-created.png" alt="step-1-requirements-file-created" border="0"></a>
+    <ul>Made a new heroku app for the Zodiac Version:2.0</ul>
+    <a href="https://ibb.co/sQM6Fpm"><img src="https://i.ibb.co/TRFbHDv/step-2-created-version-2-zodiac-app-on-heroku.png" alt="step-2-created-version-2-zodiac-app-on-heroku" border="0"></a>
+    <ul> Added the necessary CONFIG VAR files, for the GOOGLE API's to work, as well as New PORT</ul>
+    <a href="https://ibb.co/1Tpzvbx"><img src="https://i.ibb.co/KWQK0mH/step-3-config-vars-have-been-added-port-and-cred.png" alt="step-3-config-vars-have-been-added-port-and-cred" border="0"></a>
+    <ul>For the project to work on heroku, added Pyhon and NODE.JS buildpacks to the project</ul>
+    <a href="https://ibb.co/z28w3C5"><img src="https://i.ibb.co/QH8GWhc/step-4-python-and-nodejs-buildpacks-have-been-added.png" alt="step-4-python-and-nodejs-buildpacks-have-been-added" border="0"></a>
+    <ul>Connected GITHUB repo page to the heroku with project designation:</ul>
+    <a href="https://ibb.co/k9L761h"><img src="https://i.ibb.co/KLtPzw9/step-5-connect-the-github-page-and-add-the-project.png" alt="step-5-connect-the-github-page-and-add-the-project" border="0"></a>
+    <ul>Deployed the project on Heroku</ul>
+    <a href="https://ibb.co/hMTr7ZG"><img src="https://i.ibb.co/0Xz1DF0/step-6-deploy-the-project-on-heroku.png" alt="step-6-deploy-the-project-on-heroku" border="0"></a>
+    <br>
+    <ul>Link to the project:</ul>
+    <a href="https://zodiac-version2-2c53e1995910.herokuapp.com/">Zodiac Project : 2.0</a>
 
 <h2> Materials Used / References</h2>
     <ul>ASCII Zodiac Code from: https://ascii.co.uk/art/zodiac</ul>
     <ul>Delay Timer from: https://realpython.com/python-sleep/</ul>
     <ul>Horoscope Information from : https://www.allure.com/story/zodiac-sign-personality-traits-dates</ul>
     <ul>Chinese Horoscope from : https://www.oprahdaily.com/life/a35119928/chinese-zodiac-signs/</ul>
+    <ul>Google API integration borrowed from Love-Sandwiches project, GSPREAD web page used for the information : how to call specific lines from google sheets/columns to incorporate it in Python code</ul>
 
  <h2> The Persistant Problems </h2>
- <p> As the dictionary entries take up much space it's physically impossible to adjust them to the small Heroku window for output. I am lacking "knowhow" to figure this out frankly time is of the essence. My thought is that probably I could split each long entry into multiple smaller entries and then print the all out together one by one. But frankly I don't mind that they are being split automatically to the next line. </p>
+ <p>With the google API integration came the delay, after the input of the year it takes few seconds to retrieve the data from google sheets.</p>
  <p> The python code checker doesn't like the ASCII art and throw errors, but I don't think there's anything I can do about that.</p>
  <p> Those are only errors that the checker doesn't like, line lenght and ascii art</p>
-<a href="https://ibb.co/cvhhGbL"><img src="https://i.ibb.co/j5kkcVR/errorcodes1.png" alt="errorcodes1" border="0"></a>
+ <p>I minimized the line lenght where I could, rest has to stay as is, per functionality of the project</p> 
+ <p>In version one there were problems with indentation. I have double checked all the code, there are 2 lines between each code section. 4-8-12 indents throughout<p>
+ <a href="https://ibb.co/ygHpNdV"><img src="https://i.ibb.co/ss8Cgbt/pep8.png" alt="pep8" border="0"></a>
 <br>
-<a href="https://ibb.co/KVStp9q"><img src="https://i.ibb.co/TPdQxH8/errorcodes2.png" alt="errorcodes2" border="0"></a>
-
