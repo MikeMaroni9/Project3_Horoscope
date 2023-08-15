@@ -37,7 +37,9 @@ time.sleep(2)
 print("---------------Greetings, let us begin, shall we ?-------------------")
 print("---------------------------------------------------------------------")
 time.sleep(1)
-name = input("Please enter Your name or leave it empty if you wish to remain anonymous: \n")
+name = input("Please enter Your name or leave it empty: \n")
+if not name:
+    name = "You wished to remain anonymous"
 name_list = [i for i in name]
 print("---------------------------------------------------------------------")
 
@@ -45,15 +47,17 @@ print("---------------------------------------------------------------------")
 """
 User input and error checking of the YEAR he was born in
 """
+
+
 def is_valid_year(year):
     return 1948 <= year <= 2031
     global enter_year
 
+
 while True:
     try:
-        enter_year = int(input("Please enter a YEAR you were born in: (YYYY format, ex: 1984): \n"))
+        enter_year = int(input("Please enter a YEAR you were born in: \n (YYYY format, ex: 1984): \n"))
         if is_valid_year(enter_year):
-            print("correct format year has been entered")
             break
         else:
             print("Year ranges currently available in software (1948 to 2031)")
@@ -67,13 +71,14 @@ days = (2023 - int(enter_year)) * 365
 Main function of the code
 """
 
+
 def main():
     global month
     global zodiac_sign
     valid_months = ['January', 'February', 'March', 'April', 'May', 'June',
                     'July', 'August', 'September', 'October', 'November', 'December']
     while True:
-        enter_month = input("Now the MONTH you were born in (ex. May, June:) \n")
+        enter_month = input("Now the MONTH you were born in (ex.May,June:) \n")
         month = enter_month.title()
 
         if month in valid_months:
@@ -83,12 +88,14 @@ def main():
             print("Data format is not correct. Please try again.")
     selected_date = get_valid_date()
     horoscope(month, selected_date)
-    zodiac_sign = chinese_horo(enter_year) 
+    zodiac_sign = chinese_horo(enter_year)
 
 
 """
 User input and error checking of the day of the month he was born in
 """
+
+
 def get_valid_date():
     global date
     while True:
@@ -105,8 +112,10 @@ def get_valid_date():
 """
 Function to assing correct Horoscope sign to the user based on the data he has entered
 """
+
+
 def horoscope(month, day):
-    global horo_sign  
+    global horo_sign
     if month == 'December':
         horo_sign = 'Sagittarius' if day < 22 else 'Capricorn'
     elif month == 'January':
@@ -153,6 +162,8 @@ signDescriptionPisces = SHEET.worksheet('sign_description').col_values(12)
 """
 Function calling for the correct description based on the Horoscope sign
 """
+
+
 def horo_description(horo_sign):
     sign_descriptions = {
         "Aries": signDescriptionAries,
@@ -178,6 +189,8 @@ def horo_description(horo_sign):
 """
 Function checking for the correct Chinese horoscope based on the year he was born in
 """
+
+
 def chinese_horo(year):
     if year in (1948, 1960, 1972, 1984, 1996, 2008, 2020):
         return "Rat"
@@ -226,8 +239,10 @@ signDescriptionPig = SHEET.worksheet('chn_sign_description').col_values(12)
 """
 Function assigning correct description for the Chinese horoscope sign based on the year he was born in
 """
+
+
 def chinese_horo_description(zodiac_sign):
-    if zodiac_sign == "Rat" :
+    if zodiac_sign == "Rat":
         description = signDescriptionRat
     elif zodiac_sign == "Ox":
         description = signDescriptionOx
@@ -253,9 +268,12 @@ def chinese_horo_description(zodiac_sign):
         description = signDescriptionPig
     return description
 
+
 """
 Main logic of the console print out for the UI
 """
+
+
 main()
 print("---------------------------------------------------------------------")
 time.sleep(1)
