@@ -9,6 +9,9 @@ SCOPE = [
     "https://www.googleapis.com/auth/drive"
     ]
 
+"""
+Global Variables
+"""
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
@@ -39,6 +42,9 @@ name_list = [i for i in name]
 print("---------------------------------------------------------------------")
 
 
+"""
+User input and error checking of the YEAR he was born in
+"""
 def is_valid_year(year):
     return 1948 <= year <= 2031
     global enter_year
@@ -55,8 +61,11 @@ while True:
         print("The data is invalid. Please enter a valid year.")
 
 print("Please wait, while the system loads all components...")
-
 days = (2023 - int(enter_year)) * 365
+
+"""
+Main function of the code
+"""
 
 def main():
     global month
@@ -76,6 +85,9 @@ def main():
     horoscope(month, selected_date)
     zodiac_sign = chinese_horo(enter_year) 
     
+"""
+User input and error checking of the day of the month he was born in
+"""
 def get_valid_date():
     global date
     while True:
@@ -88,6 +100,9 @@ def get_valid_date():
         except ValueError:
             print("Error: Please enter a valid number.")
 
+"""
+Function to assing correct Horoscope sign to the user based on the data he has entered
+"""
 def horoscope(month, day):
     global horo_sign  
     if month == 'December':
@@ -120,7 +135,6 @@ def horoscope(month, day):
 """
 Google Sheet Data implementation for Sign Description
 """
-
 signDescriptionAries = SHEET.worksheet('sign_description').col_values(1)
 signDescriptionTaurus = SHEET.worksheet('sign_description').col_values(2)
 signDescriptionGemini = SHEET.worksheet('sign_description').col_values(3)
@@ -134,6 +148,9 @@ signDescriptionCapricorn = SHEET.worksheet('sign_description').col_values(10)
 signDescriptionAquarius = SHEET.worksheet('sign_description').col_values(11)
 signDescriptionPisces = SHEET.worksheet('sign_description').col_values(12)
 
+"""
+Function calling for the correct description based on the Horoscope sign
+"""
 def horo_description(horo_sign):
     sign_descriptions = {
         "Aries": signDescriptionAries,
@@ -155,7 +172,9 @@ def horo_description(horo_sign):
     else:
         print("ERR: Something went wrong... please try again")
 
-
+"""
+Function checking for the correct Chinese horoscope based on the year he was born in
+"""
 def chinese_horo(year):
     if year in (1948, 1960, 1972, 1984, 1996, 2008, 2020):
         return "Rat"
@@ -182,7 +201,7 @@ def chinese_horo(year):
     elif year in (1959, 1971, 1983, 1995, 2007, 2019, 2031):
         return "Pig"
     else:
-        print("This system works from year 1948 onwards, please try again.")
+        raise ValueError("This system works from year 1948 to 2031, please try again.")
 
 
 """
@@ -201,6 +220,9 @@ signDescriptionRooster = SHEET.worksheet('chn_sign_description').col_values(10)
 signDescriptionDog = SHEET.worksheet('chn_sign_description').col_values(11)
 signDescriptionPig = SHEET.worksheet('chn_sign_description').col_values(12)
 
+"""
+Function assigning correct description for the Chinese horoscope sign based on the year he was born in
+"""
 def chinese_horo_description(zodiac_sign):
     if zodiac_sign == "Rat" :
         description = signDescriptionRat
@@ -228,7 +250,9 @@ def chinese_horo_description(zodiac_sign):
         description = signDescriptionPig
     return description
 
-
+"""
+Main logic of the console print out for the UI
+"""
 main()
 print("---------------------------------------------------------------------")
 time.sleep(1)
